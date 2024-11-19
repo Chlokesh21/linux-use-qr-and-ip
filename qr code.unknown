@@ -1,0 +1,36 @@
+┌──(lokesh㉿kali)-[~]
+└─$ sudo apt install qrencode
+[sudo] password for lokesh: 
+qrencode is already the newest version (4.1.1-1+b3).
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 1793
+                                                                                                        
+┌──(lokesh㉿kali)-[~]
+└─$ cd Desktop
+                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop]
+└─$ qrencode "you have been hacked" -o out.png                                
+                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop]
+└─$ qrencode "https://www.youtube.com/c/FilmymojiShorts/videos" -o youtube.png
+                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop]
+└─$ qrencode -t ANSIUTF8 "https://www.google.com"                             
+█████████████████████████████████
+█████████████████████████████████
+████ ▄▄▄▄▄ █ ██▀▀ ▄▄▄█ ▄▄▄▄▄ ████
+████ █   █ █  ▀█ ▀▄▄▀█ █   █ ████
+████ █▄▄▄█ █▀  █▄█▄▄ █ █▄▄▄█ ████
+████▄▄▄▄▄▄▄█▄█ ▀▄█▄█▄█▄▄▄▄▄▄▄████
+████ ▄█▀  ▄█▀█▄█▄▀▀▀▀▀█▄▀ ▄ ▄████
+█████▀█ █▀▄   ▄█▀▄▀▄██▀ ▄▄ ▀█████
+████▀▀█ ▄▀▄▀▀█▀▄▀█▀ ▀ ▄█▀▄▄ ▄████
+██████ ▀▄ ▄▀▀██ ▄▄ ▄██▀  ▄ ▀█████
+████▄▄█▄█▄▄█▀▄ █▄█▀▄ ▄▄▄ ▄▄██████
+████ ▄▄▄▄▄ █▀▄▀█▀█ █ █▄█ ▀▀▀▀████
+████ █   █ █▄▀▄▄▀▄ ▀ ▄  ▄▄   ████
+████ █▄▄▄█ █▀▄█ ▄ ▄▀▄▄ ▀▀ ▀ █████
+████▄▄▄▄▄▄▄█▄███▄▄█▄██████▄▄▄████
+█████████████████████████████████
+█████████████████████████████████
+                                          

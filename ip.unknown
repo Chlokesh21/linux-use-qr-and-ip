@@ -1,0 +1,122 @@
+┌──(lokesh㉿kali)-[~/Desktop/loki]
+└─$ git clone https://github.com/Und3rf10w/kali-anonsurf.git
+Cloning into 'kali-anonsurf'...
+remote: Enumerating objects: 474, done.
+remote: Counting objects: 100% (59/59), done.
+remote: Compressing objects: 100% (27/27), done.
+remote: Total 474 (delta 46), reused 32 (delta 32), pack-reused 415 (from 1)
+Receiving objects: 100% (474/474), 199.78 KiB | 139.00 KiB/s, done.
+Resolving deltas: 100% (157/157), done.
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki]
+└─$ cd kali-anonsurf
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ ls                
+LICENSE  README.md  installer.sh  kali-anonsurf-deb-src
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ sudo ./installer.sh
+[sudo] password for lokesh: 
+/usr/bin/gpg
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.NLxm4gY20H/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys AB9660B9EB2CC88B
+gpg: key AB9660B9EB2CC88B: "Launchpad PPA for I2P Maintainers" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+Hit:1 http://http.kali.org/kali kali-rolling InRelease           
+Hit:2 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble InRelease
+Reading package lists... Done
+W: https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu/dists/noble/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+secure-delete is already the newest version (3.1-10).
+tor is already the newest version (0.4.8.13-2).
+i2p is already the newest version (2.7.0-1~ubuntu1).
+i2p-router is already the newest version (2.7.0-1~ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 1794 not upgraded.
+dpkg-deb: building package 'kali-anonsurf' in 'kali-anonsurf.deb'.
+(Reading database ... 396920 files and directories currently installed.)
+Preparing to unpack kali-anonsurf.deb ...
+Unpacking kali-anonsurf (1.2.3.1) over (1.2.3.1) ...
+Setting up kali-anonsurf (1.2.3.1) ...
+Processing triggers for kali-menu (2024.3.1) ...
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ anonsurf --help
+
+Parrot AnonSurf Module
+        Usage:
+        ┌──[lokesh@kali]─[/home/lokesh/Desktop/loki/kali-anonsurf]
+        └──╼ $ anonsurf {start|stop|restart|change|status}
+
+         start - Start system-wide anonymous
+                  tunneling under TOR proxy through iptables                                                                                                                                                                            
+         stop - Reset original iptables settings                                                                                                                                                                                        
+                  and return to clear navigation                                                                                                                                                                                        
+         restart - Combines "stop" and "start" options                                                                                                                                                                                  
+         change - Changes identity restarting TOR                                                                                                                                                                                       
+         status - Check if AnonSurf is working properly                                                                                                                                                                                 
+         myip - Show your current IP address                                                                                                                                                                                            
+        ----[ I2P related features ]----                                                                                                                                                                                                
+         starti2p - Start i2p services                                                                                                                                                                                                  
+         stopi2p - Stop i2p services                                                                                                                                                                                                    
+                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ sudo anonsurf start 
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[ i ] Stopping IPv6 services:                                                                                                                                                                                                           
+
+
+[ i ] Starting anonymous mode:
+
+ * Tor is not running!  starting it  for you
+
+ * Saved iptables rules
+
+ * Modified resolv.conf to use Tor and Private Internet Access DNS
+ * All traffic was redirected through Tor                                                                                                                                                                                               
+
+[ i ] You are under AnonSurf tunnel
+
+
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ sudo anonsurf status
+● tor.service - Anonymizing overlay network for TCP (multi-instance-master)
+     Loaded: loaded (/usr/lib/systemd/system/tor.service; disabled; preset: disabled)
+     Active: active (exited) since Sun 2024-11-17 15:19:00 +0530; 21s ago
+ Invocation: aa612155c433441da39e91d536bf29d4
+    Process: 48694 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 48694 (code=exited, status=0/SUCCESS)
+
+Nov 17 15:19:00 kali systemd[1]: Starting tor.service - Anonymizing overlay network for TCP (multi-instance-master)...
+Nov 17 15:19:00 kali systemd[1]: Finished tor.service - Anonymizing overlay network for TCP (multi-instance-master).
+
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ sudo anonsurf change
+ * Tor daemon reloaded and forced to change nodes
+
+
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ sudo watch -n 5 "sudo anonsurf change"
+                                                                                                                                                                                                                                        
+┌──(lokesh㉿kali)-[~/Desktop/loki/kali-anonsurf]
+└─$ sudo anonsurf stop                    
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[ i ] Stopping anonymous mode:                                                                                                                                                                                                          
+
+ * Deleted all iptables rules
+                                                                                                                                                                                                                                        
+ * Iptables rules restored
+                                                                                                                                                                                                                                        
+[ i ] Reenabling IPv6 services:                                                                                                                                                                                                         
+
+ * Anonymous mode stopped
